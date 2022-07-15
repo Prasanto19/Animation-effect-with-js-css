@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Envelop love effect</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            *{margin: 0;padding: 0;box-sizing: border-box;}
+            body {
+                margin: 70px; 
+                padding: 0; 
+                min-height : 100vh; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #44a6c6;
+                }
+
+                #card {
+                width: 0; 
+                height: 0; 
+                border-top: 100px solid #e8f4f8;
+                border-right: 170px solid #c1e1ec;
+                border-bottom: 100px solid #d4ebf2;
+                border-left: 170px solid #c1e1ec;
+                box-shadow: 10px 10px 5px #3793b2;
+                }
+
+                .heart {
+                width: 32px; 
+                height: 32px; 
+                background-color: #ff1414;
+                transform: translate(-50%, -50%) rotate(45deg);
+                animation: heartbeat 1.4s infinite; 
+                }
+
+                .heart:before {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateY(-50%);
+                border-radius: 50%;
+                }
+
+                .heart:after {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateX(-50%);
+                border-radius: 50%; 
+                }
+
+                @keyframes heartbeat {
+                0% { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+                25% { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+                30% { transform: translate(-50%, -50%) rotate(45deg) scale(1.4); }
+                50% { transform: translate(-50%, -50%) rotate(45deg) scale(1.2); }
+                70% { transform: translate(-50%, -50%) rotate(45deg) scale(1.4); }
+                100% { transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+                }
+
+                .heart1 {
+                width: 32px; 
+                height: 32px; 
+                background-color: #ff1414;
+                transform: translate(-50%, -160%) rotate(45deg); 
+                }
+
+                .heart1:before {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateY(-50%);
+                border-radius: 50%;
+                }
+
+                .heart1:after {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateX(-50%);
+                border-radius: 50%; 
+                }
+
+
+                .heart1 {
+                animation: heart1 2.5s ease-out 1s infinite; }
+
+                @keyframes heart1 {
+                0% {transform: translateY(-200%) translateX(0) scale(0.25) rotate(45deg); opacity: 1;}
+                
+                100% {transform: translateY(-400%) translateX(0) scale(1) rotate(50deg); opacity: 0;}
+                }
+
+                .heart2 {
+                width: 32px; 
+                height: 32px; 
+                background-color: #ff1414;
+                transform: translate(-50%, -250%) rotate(45deg); 
+                }
+
+                .heart2:before {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateY(-50%);
+                border-radius: 50%;
+                }
+
+                .heart2:after {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateX(-50%);
+                border-radius: 50%; 
+                }
+
+                .heart2 {
+                animation: heart2 4s ease-out 1s infinite; }
+
+                @keyframes heart2 {
+                0% {transform: translateY(-300%) translateX(-100%) scale(0.25) rotate(-20deg); opacity: 0.2;}
+                
+                100% {transform: translateY(-500%) translateX(-10%) scale(1) rotate(45deg); opacity: 0;}
+                }
+
+                .heart3 {
+                width: 32px; 
+                height: 32px; 
+                background-color: #ff1414;
+                transform: translate(-50%, -350%) rotate(45deg); 
+                }
+
+                .heart3:before {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateY(-50%);
+                border-radius: 50%;
+                }
+
+                .heart3:after {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateX(-50%);
+                border-radius: 50%; 
+                }
+
+                .heart3 {
+                animation: heart3 2s ease-out 1s infinite; }
+
+                @keyframes heart3 {
+                0% {transform: translateY(-430%) translateX(-100%) scale(0.25) rotate(20deg); opacity: 0.2;}
+                
+                100% {transform: translateY(-650%) translateX(-10%) scale(1) rotate(60deg); opacity: 0;}
+                }
+
+                .heart4 {
+                width: 32px; 
+                height: 32px; 
+                background-color: #ff1414;
+                transform: translate(-50%, -450%) rotate(45deg); 
+                }
+
+                .heart4:before {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateY(-50%);
+                border-radius: 50%;
+                }
+
+                .heart4:after {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                bottom: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: #ff1414; 
+                transform: translateX(-50%);
+                border-radius: 50%; 
+                }
+
+
+                .heart4 {
+                animation: heart4 2.3s ease-out 1s infinite; }
+
+                @keyframes heart4 {
+                0% {transform: translateY(-450%) translateX(-100%) scale(0.25) rotate(45deg); opacity: 0.2;}
+                
+                100% {transform: translateY(-750%) translateX(-10%) scale(1) rotate(80deg); opacity: 0;}
+                }
+/* Bubble */
+
+            /* Essential CSS - Makes the effect work */
+
+            body {
+            background-color: #3498db;
+            }
+
+            .bubbles {
+    display: inline-block;
+    font-family: arial;
+    position: relative;
+    top: -160px;
+    left: 320px;
+}
+
+            .bubbles h1 {
+            position: relative;
+            margin: 1em 0 0;
+            font-family: 'Luckiest Guy', cursive;
+            color: #fff;
+            z-index: 2;
+            }
+
+            .individual-bubble {
+            position: absolute;
+            border-radius: 100%;
+            bottom: 10px;
+            background-color: #fff;
+            z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center-outer">
+            <div class="center-inner">
+            
+            <div class="bubbles" id="b" style="display: none;">
+            <h1>Love you Chaity!&hearts;&hearts;&hearts;</h1>
+            </div>
+            
+            </div>
+        </div>
+        <div id="card">
+            <div class="heart"></div>
+            <div class="heart1"></div>
+             <div class="heart2"></div>
+             <div class="heart3"></div>
+             <div class="heart4"></div>
+        </div> 
+        <script>
+            const myTimeout = setTimeout(myGreeting, 20000);
+
+function myGreeting() {
+  document.getElementById("b").style.display = "block";
+}
+            
+            // Created for an Articles on:
+            // https://www.html5andbeyond.com/bubbling-text-effect-no-canvas-required/
+
+            //setInterval(document.getElementById("b").style.display="none",20000);
+            jQuery(document).ready(function($){
+            // Define a blank array for the effect positions. This will be populated based on width of the title.
+            var bArray = [];
+            // Define a size array, this will be used to vary bubble sizes
+            var sArray = [4,6,8,10];
+
+            // Push the header width values to bArray
+            for (var i = 0; i < $('.bubbles').width(); i++) {
+                bArray.push(i);
+            }
+            
+            // Function to select random array element
+            // Used within the setInterval a few times
+            function randomValue(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
+            // setInterval function used to create new bubble every 350 milliseconds
+            setInterval(function(){
+                
+                // Get a random size, defined as variable so it can be used for both width and height
+                var size = randomValue(sArray);
+                // New bubble appeneded to div with it's size and left position being set inline
+                // Left value is set through getting a random value from bArray
+                $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+                
+                // Animate each bubble to the top (bottom 100%) and reduce opacity as it moves
+                // Callback function used to remove finsihed animations from the page
+                $('.individual-bubble').animate({
+                    'bottom': '100%',
+                    'opacity' : '-=0.7'
+                }, 3000, function(){
+                    $(this).remove()
+                }
+                );
+
+            }, 1000);
+
+            });
+        </script>
+    </body>
+</html>
