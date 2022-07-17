@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Scrambling Text Effect</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+            body {
+            background: #ffbb73;
+            margin: 0;
+            font-family: "Roboto Mono", monospace;
+            }
+
+            .box-container {
+            position: absolute;
+            background: #ffac54;
+            border-radius: 1em;
+            width: 750px;
+            height: 300px;
+            margin-left: -375px;
+            margin-top: -150px;
+            left: 50%;
+            top: 40%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .space {
+            padding: 0 0.7em;
+            }
+
+            .box {
+            font-size: 70px;
+            font-weight: 600;
+            border-radius: 5px;
+            position: relative;
+            text-align: center;
+            height: 1.4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .click {
+            font-size: 30px;
+            font-weight: 600;
+            position: absolute;
+            width: 150px;
+            height: 80px;
+            margin-left: -75px;
+            left: 50%;
+            top: 70%;
+            text-align: center;
+            background: #ffac54;
+            border-radius: 1em;
+            transition: 300ms;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .hover-click:hover {
+            background: #ffb363;
+            cursor: pointer;
+            }
+
+            .ani-button {
+            animation-name: pulse;
+            animation-timing-function: cubic-bezier(0.09, 0.79, 0.74, 0.34);
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            }
+
+            @keyframes pulse {
+            from {
+                background: #fff6ed;
+            }
+            to {
+                background: #737373;
+            }
+            }
+            @media only screen and (max-width: 800px) {
+            .box {
+                font-size: 40px;
+            }
+
+            .box-container {
+                width: 300px;
+                height: 120px;
+                margin-left: -150px;
+                margin-top: -70px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box-container">
+            <span class="box"> </span>
+            <span class="box"> </span>
+            <span class="box"> </span>
+            <span class="box"> </span>
+            <span class="box"> </span>
+            <span class="space"></span>
+            <span class="box"> </span>
+            <span class="box"> </span>
+            <span class="box"> </span>
+            <span class="box"></span>
+            <span class="space"></span>
+            <span class="box"></span>
+            <span class="box"></span>
+        </div>
+        <div class="click hover-click">again</div>
+        <script>
+            $(document).ready(function(){
+                var boxArray = $('.box');
+                var fixedText = "NeverGiveUp"; //your text here
+                var randomText = "abcdefghijklmnopqrstuvwxyz0123456789$#@%&<>,?/+~!\;,{*}"; //the randomtext you want
+                var clickDisable = true;
+                var startTime, largestDuration;
+                function ani(){
+                    $('.click')[0].classList.add('ani-button');
+                }
+                function frames(){
+                    function intGet(multiplier){
+                    return Math.floor(Math.random() * multiplier);
+                    };
+                    var animationDuration = intGet(2500) + 500; //0-(range) + constant = 500-3000ms
+                    var timeBetweenFrames = intGet(100) + 50; //0-(range) + constant = 50-150ms
+                    var totalFrames = Math.floor(animationDuration/timeBetweenFrames);
+                    return [timeBetweenFrames, totalFrames, animationDuration]; // frameAttr[0,1,2]
+                }
+                function start(){
+                    largestDuration = 0;
+                    Array.prototype.forEach.call(boxArray, function(el, index) {
+                    var frameAttr = frames();
+                    if(frameAttr[2] > largestDuration){
+                        largestDuration = frameAttr[2];
+                    }
+                    function timeout(){
+                        setTimeout(function(){
+                        if(frameAttr[1]--,frameAttr[1]!=0){
+                            boxArray[index].innerHTML = randomText.charAt(Math.floor(Math.random() * randomText.length));
+                            timeout();
+                        }else{
+                            boxArray[index].innerHTML = fixedText.charAt(index);
+                        };
+                        },frameAttr[0]);
+                    };
+                    timeout();
+                    });
+                    startTime = Date.now();
+                    setTimeout(function(){
+                    clickDisable = false;
+                    $('.click')[0].classList.remove('ani-button')
+                    },largestDuration);
+                };
+                start();
+                $('.click').on('click',function(){
+                    if(clickDisable == false){
+                    start();
+                    ani();
+                    clickDisable = true;
+                    }else{
+                    var timeToWait = largestDuration - (Date.now() - startTime)
+                    console.log("Please click again in " + (timeToWait) + "ms");
+                    }
+                });
+            });
+        </script>
+    </body>
+    
+</html>
