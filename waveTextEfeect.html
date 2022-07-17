@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Eye ball on mousemove</title>
+        <style>
+           body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #343436;
+}
+
+
+.box {
+  height: 33vh;
+  width: 33vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1D1F20;
+  box-shadow: 0 0 3px #eee;
+  border-radius: 4px;
+}
+
+
+.text {
+  font-size: 24px;
+  font-family: sans-serif;
+  color: #aaa;
+}
+
+
+span[class^="l"] {
+  transition: all 0.3s ease-in-out;
+}
+
+
+.l1 {
+  animation: 2.4s letter ease-in-out infinite;
+}
+
+.l2 {
+  animation: 2.4s letter ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.l3 {
+  animation: 2.4s letter ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.l4 {
+  animation: 2.4s letter ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.l5 {
+  animation: 2.4s letter ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.l6 {
+  animation: 2.4s letter ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.l7 {
+  animation: 2.4s letter ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.l8 {
+  animation: 2.4s letter ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+.l9 {
+  animation: 2.4s letter ease-in-out infinite;
+}
+
+
+
+
+
+
+
+@keyframes letter {
+  0% { 
+    font-size: 24px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  50% { 
+    font-size: 48px;
+    color: #eee;
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+  100% {
+    font-size: 24px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <p class="text">
+              <span class="l1">P</span>
+              <span class="l2">R</span>
+              <span class="l3">A</span>
+              <span class="l4">S</span>
+              <span class="l5">H</span>
+              <span class="l6">A</span>
+              <span class="l7">N</span>
+              <span class="l8">T</span>
+              <span class="l9">A</span>
+            </p>
+        </div>
+        
+    </body>
+</html>
