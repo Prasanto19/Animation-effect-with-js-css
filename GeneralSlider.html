@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>General Slider</title>
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    </head>
+    <style>
+        body {
+            display: block;
+            margin: 0px;
+            padding: 50px;
+        }
+        .swiper {
+            height: 500px;
+        }
+        .swiper-slide{
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+        }
+    </style>
+    <body>
+
+        <!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+        <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-1.jpg);">
+            Slide 1
+        </div>
+        <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-2.jpg);">
+            Slide 2
+        </div>
+        <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-3.jpg);">
+            Slide 3
+        </div>
+        <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-4.jpg);">
+            Slide 4
+        </div>
+        <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-5.jpg);">
+            Slide 5
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper('.swiper', {
+                speed: 1500,
+                autoplay: {
+                    delay: 3000,
+                    disableOnIteration: false,
+                },
+                // direction: 'vertical',
+                // loop: true,
+
+                // Optional parameters
+                grabCursor: true,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable:true,
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+        </script>
+    </body>
+</html> 
