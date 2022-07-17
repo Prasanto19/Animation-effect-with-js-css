@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GlowFlashShineEffect</title>
+        <style>
+            html {
+                background-color: #222;
+                }
+
+                .headers {
+                margin-top: 10%;
+                }
+
+                h1, h2, h3 {
+                font-family: 'Monoton', cursive;
+                font-size: 40px;
+                }
+
+                h1 {
+                color: #fff;
+                -webkit-animation: h1 8s infinite; 
+                animation: h1 8s infinite;
+                }
+
+                h2 {
+                color: white;
+                -webkit-animation: h2 0.35s infinite; 
+                animation: h2 0.35s infinite;
+                }
+
+                h3 {
+
+                background: -webkit-linear-gradient(#fff, #eee, #fff, #666, #eee, #fff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0px 1px 45px rgba(255, 255, 255, 0.2);
+                }
+
+
+                div {
+                    text-align: center;
+                    position: relative;
+                }
+
+                /* Chrome, Safari, Opera */
+                @-webkit-keyframes h1 {
+                    0%   {text-shadow: 0 0 3px #FF0000; color: #fff;}
+                    25%  {text-shadow: 0 0 12px #FF0000;}
+                    50%  {text-shadow: 0 0 20px #FF0000; color: pink;}
+                    75%  {text-shadow: 0 0 12px #FF0000;}
+                    100% {text-shadow: 0 0 3px #FF0000; color: #fff;}
+                }
+
+                @-webkit-keyframes h2 {
+                    0%   {text-shadow: 0 0 6px #FFF;}
+                    100%  {text-shadow: 0 0 0px #000;}
+                }
+
+                /* Internet Explorer */
+
+                @keyframes h1 {
+                    0%   {text-shadow: 0 0 3px #FF0000; color: #fff;}
+                    25%  {text-shadow: 0 0 12px #FF0000;}
+                    50%  {text-shadow: 0 0 20px #FF0000; color: pink;}
+                    75%  {text-shadow: 0 0 12px #FF0000;}
+                    100% {text-shadow: 0 0 3px #FF0000; color: #fff;}
+                }
+
+                @keyframes h2 {
+                    0%   {text-shadow: 0 0 6px #FFF;}
+                    100%  {text-shadow: 0 0 0px #000;}
+                }
+        </style>
+    </head>
+    <body>
+        <div class = "headers">
+            <h1>Slow Glow</h1>
+            <h2>Fast Flash</h2>
+            <h3>Fine Shine</h3>
+        </div>
+        
+    </body>
+</html>
