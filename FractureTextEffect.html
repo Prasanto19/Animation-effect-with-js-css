@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Eye ball on mousemove</title>
+        <style>
+        .container {
+        height: 500px;
+        width: 100%;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        }
+
+        .txt {
+        display: flex;
+        align-self: center;
+        }
+
+        h1 {
+        font-family: Arial;
+        font-size: 150px;
+        line-height: 1;
+        font-weight: 700;
+        margin: 0;
+        position: relative;
+        }
+        h1::before {
+        content: attr(data-text);
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        height: 50%;
+        background-color: #fff;
+        transform: translate(-2%, -2%);
+        z-index: 1;
+        animation: txt 5s linear alternate infinite;
+        }
+        h1::after {
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        display: inline-block;
+        height: 50%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        }
+
+        @keyframes txt {
+        0% {
+            transform: translate(0, 0);
+        }
+        30% {
+            transform: translate(0, 0);
+        }
+        60% {
+            transform: translate(-2%, -2%);
+        }
+        100% {
+            transform: translate(-2%, -2%);
+        }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="txt">
+              <h1 data-text="FRACTURE">FRACTURE</h1>
+            </div>
+        </div>
+        
+    </body>
+</html>
