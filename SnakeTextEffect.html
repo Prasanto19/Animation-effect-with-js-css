@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Eye ball on mousemove</title>
+        <style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@-webkit-keyframes move {
+  to {
+    text-indent: -140px;
+  }
+}
+@-moz-keyframes move {
+  to {
+    text-indent: -140px;
+  }
+}
+@-o-keyframes move {
+  to {
+    text-indent: -140px;
+  }
+}
+@keyframes move {
+  to {
+    text-indent: -140px;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #353535;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4em;
+}
+body .perspective {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2%;
+}
+body .perspective:nth-child(1) {
+  left: 0%;
+}
+body .perspective:nth-child(1):hover ~ .wrap {
+  -webkit-perspective-origin: 250%;
+  -ms-perspective-origin: 250%;
+  perspective-origin: 250%;
+}
+body .perspective:nth-child(2) {
+  left: 2%;
+}
+body .perspective:nth-child(2):hover ~ .wrap {
+  -webkit-perspective-origin: 234%;
+  -ms-perspective-origin: 234%;
+  perspective-origin: 234%;
+}
+body .perspective:nth-child(3) {
+  left: 4%;
+}
+body .perspective:nth-child(3):hover ~ .wrap {
+  -webkit-perspective-origin: 226%;
+  -ms-perspective-origin: 226%;
+  perspective-origin: 226%;
+}
+body .perspective:nth-child(4) {
+  left: 6%;
+}
+body .perspective:nth-child(4):hover ~ .wrap {
+  -webkit-perspective-origin: 218%;
+  -ms-perspective-origin: 218%;
+  perspective-origin: 218%;
+}
+body .perspective:nth-child(5) {
+  left: 8%;
+}
+body .perspective:nth-child(5):hover ~ .wrap {
+  -webkit-perspective-origin: 210%;
+  -ms-perspective-origin: 210%;
+  perspective-origin: 210%;
+}
+body .perspective:nth-child(6) {
+  left: 10%;
+}
+body .perspective:nth-child(6):hover ~ .wrap {
+  -webkit-perspective-origin: 202%;
+  -ms-perspective-origin: 202%;
+  perspective-origin: 202%;
+}
+body .perspective:nth-child(7) {
+  left: 12%;
+}
+body .perspective:nth-child(7):hover ~ .wrap {
+  -webkit-perspective-origin: 194%;
+  -ms-perspective-origin: 194%;
+  perspective-origin: 194%;
+}
+body .perspective:nth-child(8) {
+  left: 14%;
+}
+body .perspective:nth-child(8):hover ~ .wrap {
+  -webkit-perspective-origin: 186%;
+  -ms-perspective-origin: 186%;
+  perspective-origin: 186%;
+}
+body .perspective:nth-child(9) {
+  left: 16%;
+}
+body .perspective:nth-child(9):hover ~ .wrap {
+  -webkit-perspective-origin: 178%;
+  -ms-perspective-origin: 178%;
+  perspective-origin: 178%;
+}
+body .perspective:nth-child(10) {
+  left: 18%;
+}
+body .perspective:nth-child(10):hover ~ .wrap {
+  -webkit-perspective-origin: 170%;
+  -ms-perspective-origin: 170%;
+  perspective-origin: 170%;
+}
+body .perspective:nth-child(11) {
+  left: 20%;
+}
+body .perspective:nth-child(11):hover ~ .wrap {
+  -webkit-perspective-origin: 162%;
+  -ms-perspective-origin: 162%;
+  perspective-origin: 162%;
+}
+body .perspective:nth-child(12) {
+  left: 22%;
+}
+body .perspective:nth-child(12):hover ~ .wrap {
+  -webkit-perspective-origin: 154%;
+  -ms-perspective-origin: 154%;
+  perspective-origin: 154%;
+}
+body .perspective:nth-child(13) {
+  left: 24%;
+}
+body .perspective:nth-child(13):hover ~ .wrap {
+  -webkit-perspective-origin: 146%;
+  -ms-perspective-origin: 146%;
+  perspective-origin: 146%;
+}
+body .perspective:nth-child(14) {
+  left: 26%;
+}
+body .perspective:nth-child(14):hover ~ .wrap {
+  -webkit-perspective-origin: 138%;
+  -ms-perspective-origin: 138%;
+  perspective-origin: 138%;
+}
+body .perspective:nth-child(15) {
+  left: 28%;
+}
+body .perspective:nth-child(15):hover ~ .wrap {
+  -webkit-perspective-origin: 130%;
+  -ms-perspective-origin: 130%;
+  perspective-origin: 130%;
+}
+body .perspective:nth-child(16) {
+  left: 30%;
+}
+body .perspective:nth-child(16):hover ~ .wrap {
+  -webkit-perspective-origin: 122%;
+  -ms-perspective-origin: 122%;
+  perspective-origin: 122%;
+}
+body .perspective:nth-child(17) {
+  left: 32%;
+}
+body .perspective:nth-child(17):hover ~ .wrap {
+  -webkit-perspective-origin: 114%;
+  -ms-perspective-origin: 114%;
+  perspective-origin: 114%;
+}
+body .perspective:nth-child(18) {
+  left: 34%;
+}
+body .perspective:nth-child(18):hover ~ .wrap {
+  -webkit-perspective-origin: 106%;
+  -ms-perspective-origin: 106%;
+  perspective-origin: 106%;
+}
+body .perspective:nth-child(19) {
+  left: 36%;
+}
+body .perspective:nth-child(19):hover ~ .wrap {
+  -webkit-perspective-origin: 98%;
+  -ms-perspective-origin: 98%;
+  perspective-origin: 98%;
+}
+body .perspective:nth-child(20) {
+  left: 38%;
+}
+body .perspective:nth-child(20):hover ~ .wrap {
+  -webkit-perspective-origin: 90%;
+  -ms-perspective-origin: 90%;
+  perspective-origin: 90%;
+}
+body .perspective:nth-child(21) {
+  left: 40%;
+}
+body .perspective:nth-child(21):hover ~ .wrap {
+  -webkit-perspective-origin: 82%;
+  -ms-perspective-origin: 82%;
+  perspective-origin: 82%;
+}
+body .perspective:nth-child(22) {
+  left: 42%;
+}
+body .perspective:nth-child(22):hover ~ .wrap {
+  -webkit-perspective-origin: 74%;
+  -ms-perspective-origin: 74%;
+  perspective-origin: 74%;
+}
+body .perspective:nth-child(23) {
+  left: 44%;
+}
+body .perspective:nth-child(23):hover ~ .wrap {
+  -webkit-perspective-origin: 66%;
+  -ms-perspective-origin: 66%;
+  perspective-origin: 66%;
+}
+body .perspective:nth-child(24) {
+  left: 46%;
+}
+body .perspective:nth-child(24):hover ~ .wrap {
+  -webkit-perspective-origin: 58%;
+  -ms-perspective-origin: 58%;
+  perspective-origin: 58%;
+}
+body .perspective:nth-child(25) {
+  left: 48%;
+}
+body .perspective:nth-child(25):hover ~ .wrap {
+  -webkit-perspective-origin: 50%;
+  -ms-perspective-origin: 50%;
+  perspective-origin: 50%;
+}
+body .perspective:nth-child(26) {
+  left: 50%;
+}
+body .perspective:nth-child(26):hover ~ .wrap {
+  -webkit-perspective-origin: 42%;
+  -ms-perspective-origin: 42%;
+  perspective-origin: 42%;
+}
+body .perspective:nth-child(27) {
+  left: 52%;
+}
+body .perspective:nth-child(27):hover ~ .wrap {
+  -webkit-perspective-origin: 34%;
+  -ms-perspective-origin: 34%;
+  perspective-origin: 34%;
+}
+body .perspective:nth-child(28) {
+  left: 54%;
+}
+body .perspective:nth-child(28):hover ~ .wrap {
+  -webkit-perspective-origin: 26%;
+  -ms-perspective-origin: 26%;
+  perspective-origin: 26%;
+}
+body .perspective:nth-child(29) {
+  left: 56%;
+}
+body .perspective:nth-child(29):hover ~ .wrap {
+  -webkit-perspective-origin: 18%;
+  -ms-perspective-origin: 18%;
+  perspective-origin: 18%;
+}
+body .perspective:nth-child(30) {
+  left: 58%;
+}
+body .perspective:nth-child(30):hover ~ .wrap {
+  -webkit-perspective-origin: 10%;
+  -ms-perspective-origin: 10%;
+  perspective-origin: 10%;
+}
+body .perspective:nth-child(31) {
+  left: 60%;
+}
+body .perspective:nth-child(31):hover ~ .wrap {
+  -webkit-perspective-origin: 2%;
+  -ms-perspective-origin: 2%;
+  perspective-origin: 2%;
+}
+body .perspective:nth-child(32) {
+  left: 62%;
+}
+body .perspective:nth-child(32):hover ~ .wrap {
+  -webkit-perspective-origin: -6%;
+  -ms-perspective-origin: -6%;
+  perspective-origin: -6%;
+}
+body .perspective:nth-child(33) {
+  left: 64%;
+}
+body .perspective:nth-child(33):hover ~ .wrap {
+  -webkit-perspective-origin: -14%;
+  -ms-perspective-origin: -14%;
+  perspective-origin: -14%;
+}
+body .perspective:nth-child(34) {
+  left: 66%;
+}
+body .perspective:nth-child(34):hover ~ .wrap {
+  -webkit-perspective-origin: -22%;
+  -ms-perspective-origin: -22%;
+  perspective-origin: -22%;
+}
+body .perspective:nth-child(35) {
+  left: 68%;
+}
+body .perspective:nth-child(35):hover ~ .wrap {
+  -webkit-perspective-origin: -30%;
+  -ms-perspective-origin: -30%;
+  perspective-origin: -30%;
+}
+body .perspective:nth-child(36) {
+  left: 70%;
+}
+body .perspective:nth-child(36):hover ~ .wrap {
+  -webkit-perspective-origin: -38%;
+  -ms-perspective-origin: -38%;
+  perspective-origin: -38%;
+}
+body .perspective:nth-child(37) {
+  left: 72%;
+}
+body .perspective:nth-child(37):hover ~ .wrap {
+  -webkit-perspective-origin: -46%;
+  -ms-perspective-origin: -46%;
+  perspective-origin: -46%;
+}
+body .perspective:nth-child(38) {
+  left: 74%;
+}
+body .perspective:nth-child(38):hover ~ .wrap {
+  -webkit-perspective-origin: -54%;
+  -ms-perspective-origin: -54%;
+  perspective-origin: -54%;
+}
+body .perspective:nth-child(39) {
+  left: 76%;
+}
+body .perspective:nth-child(39):hover ~ .wrap {
+  -webkit-perspective-origin: -62%;
+  -ms-perspective-origin: -62%;
+  perspective-origin: -62%;
+}
+body .perspective:nth-child(40) {
+  left: 78%;
+}
+body .perspective:nth-child(40):hover ~ .wrap {
+  -webkit-perspective-origin: -70%;
+  -ms-perspective-origin: -70%;
+  perspective-origin: -70%;
+}
+body .perspective:nth-child(41) {
+  left: 80%;
+}
+body .perspective:nth-child(41):hover ~ .wrap {
+  -webkit-perspective-origin: -78%;
+  -ms-perspective-origin: -78%;
+  perspective-origin: -78%;
+}
+body .perspective:nth-child(42) {
+  left: 82%;
+}
+body .perspective:nth-child(42):hover ~ .wrap {
+  -webkit-perspective-origin: -86%;
+  -ms-perspective-origin: -86%;
+  perspective-origin: -86%;
+}
+body .perspective:nth-child(43) {
+  left: 84%;
+}
+body .perspective:nth-child(43):hover ~ .wrap {
+  -webkit-perspective-origin: -94%;
+  -ms-perspective-origin: -94%;
+  perspective-origin: -94%;
+}
+body .perspective:nth-child(44) {
+  left: 86%;
+}
+body .perspective:nth-child(44):hover ~ .wrap {
+  -webkit-perspective-origin: -102%;
+  -ms-perspective-origin: -102%;
+  perspective-origin: -102%;
+}
+body .perspective:nth-child(45) {
+  left: 88%;
+}
+body .perspective:nth-child(45):hover ~ .wrap {
+  -webkit-perspective-origin: -110%;
+  -ms-perspective-origin: -110%;
+  perspective-origin: -110%;
+}
+body .perspective:nth-child(46) {
+  left: 90%;
+}
+body .perspective:nth-child(46):hover ~ .wrap {
+  -webkit-perspective-origin: -118%;
+  -ms-perspective-origin: -118%;
+  perspective-origin: -118%;
+}
+body .perspective:nth-child(47) {
+  left: 92%;
+}
+body .perspective:nth-child(47):hover ~ .wrap {
+  -webkit-perspective-origin: -126%;
+  -ms-perspective-origin: -126%;
+  perspective-origin: -126%;
+}
+body .perspective:nth-child(48) {
+  left: 94%;
+}
+body .perspective:nth-child(48):hover ~ .wrap {
+  -webkit-perspective-origin: -134%;
+  -ms-perspective-origin: -134%;
+  perspective-origin: -134%;
+}
+body .perspective:nth-child(49) {
+  left: 96%;
+}
+body .perspective:nth-child(49):hover ~ .wrap {
+  -webkit-perspective-origin: -142%;
+  -ms-perspective-origin: -142%;
+  perspective-origin: -142%;
+}
+body .perspective:nth-child(50) {
+  left: 98%;
+}
+body .perspective:nth-child(50):hover ~ .wrap {
+  -webkit-perspective-origin: -150%;
+  -ms-perspective-origin: -150%;
+  perspective-origin: -150%;
+}
+body .wrap {
+  -webkit-perspective: 300px;
+  -ms-perspective: 300px;
+  perspective: 300px;
+  -webkit-perspective-origin: 50%;
+  -ms-perspective-origin: 50%;
+  perspective-origin: 50%;
+  -webkit-transition: perspective-origin 0.2s;
+  transition: perspective-origin 0.2s;
+  pointer-events: none;
+}
+body .wrap .shape {
+  position: absolute;
+  left: 50%;
+  top: 50vh;
+  width: 1400px;
+  height: 100px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+body .wrap .shape .side {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+  line-height: 100px;
+  overflow: hidden;
+  text-indent: 140px;
+  -webkit-animation: move 1.5s linear infinite;
+  -moz-animation: move 1.5s linear infinite;
+  -o-animation: move 1.5s linear infinite;
+  animation: move 1.5s linear infinite;
+}
+body .wrap .shape .side:nth-child(1) {
+  color: #898bd8;
+  box-shadow: inset 0 0 35px #5b5ec9;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #898bd8;
+  -webkit-transform: translateX(0px) rotateY(-10deg);
+  -ms-transform: translateX(0px) rotateY(-10deg);
+  transform: translateX(0px) rotateY(-10deg);
+  -webkit-animation-delay: 6.75s;
+  -ms-animation-delay: 6.75s;
+  animation-delay: 6.75s;
+}
+body .wrap .shape .side:nth-child(2) {
+  color: #9b8eb3;
+  box-shadow: inset 0 0 35px #7b699a;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #9b8eb3;
+  -webkit-transform: translateX(140px) rotateY(10deg);
+  -ms-transform: translateX(140px) rotateY(10deg);
+  transform: translateX(140px) rotateY(10deg);
+  -webkit-animation-delay: 6s;
+  -ms-animation-delay: 6s;
+  animation-delay: 6s;
+}
+body .wrap .shape .side:nth-child(3) {
+  color: #c3a5ba;
+  box-shadow: inset 0 0 35px #ab809e;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #c3a5ba;
+  -webkit-transform: translateX(280px) rotateY(-10deg);
+  -ms-transform: translateX(280px) rotateY(-10deg);
+  transform: translateX(280px) rotateY(-10deg);
+  -webkit-animation-delay: 5.25s;
+  -ms-animation-delay: 5.25s;
+  animation-delay: 5.25s;
+}
+body .wrap .shape .side:nth-child(4) {
+  color: #e16991;
+  box-shadow: inset 0 0 35px #d7366c;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #e16991;
+  -webkit-transform: translateX(420px) rotateY(10deg);
+  -ms-transform: translateX(420px) rotateY(10deg);
+  transform: translateX(420px) rotateY(10deg);
+  -webkit-animation-delay: 4.5s;
+  -ms-animation-delay: 4.5s;
+  animation-delay: 4.5s;
+}
+body .wrap .shape .side:nth-child(5) {
+  color: #c697ea;
+  box-shadow: inset 0 0 35px #aa64e0;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #c697ea;
+  -webkit-transform: translateX(560px) rotateY(-10deg);
+  -ms-transform: translateX(560px) rotateY(-10deg);
+  transform: translateX(560px) rotateY(-10deg);
+  -webkit-animation-delay: 3.75s;
+  -ms-animation-delay: 3.75s;
+  animation-delay: 3.75s;
+}
+body .wrap .shape .side:nth-child(6) {
+  color: #d0c1cb;
+  box-shadow: inset 0 0 35px #b69eae;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #d0c1cb;
+  -webkit-transform: translateX(700px) rotateY(10deg);
+  -ms-transform: translateX(700px) rotateY(10deg);
+  transform: translateX(700px) rotateY(10deg);
+  -webkit-animation-delay: 3s;
+  -ms-animation-delay: 3s;
+  animation-delay: 3s;
+}
+body .wrap .shape .side:nth-child(7) {
+  color: #9a7a71;
+  box-shadow: inset 0 0 35px #785d56;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #9a7a71;
+  -webkit-transform: translateX(840px) rotateY(-10deg);
+  -ms-transform: translateX(840px) rotateY(-10deg);
+  transform: translateX(840px) rotateY(-10deg);
+  -webkit-animation-delay: 2.25s;
+  -ms-animation-delay: 2.25s;
+  animation-delay: 2.25s;
+}
+body .wrap .shape .side:nth-child(8) {
+  color: #6ff186;
+  box-shadow: inset 0 0 35px #37ec57;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #6ff186;
+  -webkit-transform: translateX(980px) rotateY(10deg);
+  -ms-transform: translateX(980px) rotateY(10deg);
+  transform: translateX(980px) rotateY(10deg);
+  -webkit-animation-delay: 1.5s;
+  -ms-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+body .wrap .shape .side:nth-child(9) {
+  color: #f7a0cb;
+  box-shadow: inset 0 0 35px #f268ac;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #f7a0cb;
+  -webkit-transform: translateX(1120px) rotateY(-10deg);
+  -ms-transform: translateX(1120px) rotateY(-10deg);
+  transform: translateX(1120px) rotateY(-10deg);
+  -webkit-animation-delay: 0.75s;
+  -ms-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+body .wrap .shape .side:nth-child(10) {
+  color: #b3b3e7;
+  box-shadow: inset 0 0 35px #8484d8;
+  text-shadow: 1px 1px 2px #000, 0 0 0.8em #b3b3e7;
+  -webkit-transform: translateX(1260px) rotateY(10deg);
+  -ms-transform: translateX(1260px) rotateY(10deg);
+  transform: translateX(1260px) rotateY(10deg);
+  -webkit-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  animation-delay: 0s;
+}
+        </style>
+    </head>
+    <body>
+        
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="perspective"></div>
+<div class="wrap">
+  <div class="shape">
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+    <div class="side">Hello&nbsp;there&nbsp;&hearts;</div>
+  </div>
+</div>
+        
+    </body>
+</html>
